@@ -89,8 +89,10 @@ class _QuizPageState extends State<QuizPage> {
   }
   Widget _buildAndroidView() {
     return Scaffold(
+      backgroundColor: const Color(0xFF1A1A1A),
       appBar: AppBar(
-        title: const Text('myQuiz'),
+        backgroundColor: const Color(0xFFB71C1C),
+        title: const Text('myQuiz', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: OrientationBuilder(
@@ -106,8 +108,10 @@ class _QuizPageState extends State<QuizPage> {
   }
   Widget _buildIOSView() {
     return CupertinoPageScaffold(
+      backgroundColor: const Color(0xFF1A1A1A),
       navigationBar: const CupertinoNavigationBar(
-        middle: Text('myQuiz'),
+        backgroundColor: Color(0xFFB71C1C),
+        middle: Text('myQuiz', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       ),
       child: SafeArea(
         child: OrientationBuilder(
@@ -131,25 +135,27 @@ class _QuizPageState extends State<QuizPage> {
           children: [
             Text(
               _expressionText,
-              style: const TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             const Text(
               '=',
-              style: TextStyle(fontSize: 28),
+              style: TextStyle(fontSize: 28, color: Color(0xFFB71C1C), fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             Text(
               _solutionText,
-              style: const TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 40),
             isIOS
                 ? CupertinoButton(
+                    color: const Color(0xFFB71C1C),
                     onPressed: _solveGame,
-                    child: const Text('Solve'),
+                    child: const Text('Solve', style: TextStyle(color: Colors.white)),
                   )
                 : ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFB71C1C), foregroundColor: Colors.white),
                     onPressed: _solveGame,
                     child: const Text('Solve'),
                   ),
@@ -157,15 +163,15 @@ class _QuizPageState extends State<QuizPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Total Counts: $_totalCount'),
+                Text('Total Counts: $_totalCount', style: const TextStyle(color: Colors.white70)),
                 isIOS
                     ? CupertinoButton(
                         onPressed: _playGame,
-                        child: Text(_playButtonText),
+                        child: Text(_playButtonText, style: const TextStyle(color: Color(0xFFB71C1C))),
                       )
                     : TextButton(
                         onPressed: _playGame,
-                        child: Text(_playButtonText),
+                        child: Text(_playButtonText, style: const TextStyle(color: Color(0xFFB71C1C))),
                       ),
               ],
             ),
@@ -187,18 +193,18 @@ class _QuizPageState extends State<QuizPage> {
                 children: [
                   Text(
                     _expressionText,
-                    style: const TextStyle(fontSize: 32),
+                    style: const TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
                   const Text(
                     '=',
-                    style: TextStyle(fontSize: 28),
+                    style: TextStyle(fontSize: 28, color: Color(0xFFB71C1C), fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 20),
                   Text(
                     _solutionText,
-                    style: const TextStyle(fontSize: 32),
+                    style: const TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -211,24 +217,26 @@ class _QuizPageState extends State<QuizPage> {
                 children: [
                   isIOS
                       ? CupertinoButton(
+                          color: const Color(0xFFB71C1C),
                           onPressed: _solveGame,
-                          child: const Text('Solve'),
+                          child: const Text('Solve', style: TextStyle(color: Colors.white)),
                         )
                       : ElevatedButton(
+                          style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFB71C1C), foregroundColor: Colors.white),
                           onPressed: _solveGame,
                           child: const Text('Solve'),
                         ),
                   const SizedBox(height: 30),
-                  Text('Total Counts: $_totalCount'),
+                  Text('Total Counts: $_totalCount', style: const TextStyle(color: Colors.white70)),
                   const SizedBox(height: 10),
                   isIOS
                       ? CupertinoButton(
                           onPressed: _playGame,
-                          child: Text(_playButtonText),
+                          child: Text(_playButtonText, style: const TextStyle(color: Color(0xFFB71C1C))),
                         )
                       : TextButton(
                           onPressed: _playGame,
-                          child: Text(_playButtonText),
+                          child: Text(_playButtonText, style: const TextStyle(color: Color(0xFFB71C1C))),
                         ),
                 ],
               ),
